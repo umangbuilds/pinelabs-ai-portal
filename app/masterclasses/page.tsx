@@ -55,7 +55,7 @@ const readiness = [
 export default function Masterclasses() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-10">
-      <h1 className="text-3xl font-bold text-[var(--navy)]">Masterclasses</h1>
+      <h1 className="text-3xl text-[var(--navy)]">Masterclasses</h1>
       <p className="mt-2 max-w-3xl text-gray-600">
         Build Working Agents on Pine Labs Rails — hands-on, expert-led sessions
         every Friday. All sessions are recorded and published here, so you can
@@ -70,7 +70,7 @@ export default function Masterclasses() {
         sessions with prior planning and review by the Core Pine Labs.AI Team.
       </div>
 
-      <h2 className="mt-10 text-2xl font-bold text-[var(--navy)]">Session library</h2>
+      <h2 className="mt-10 text-2xl text-[var(--navy)]">Session library</h2>
       <p className="mt-1 text-sm text-gray-600">
         Recordings are published after each session. Sessions not yet delivered are marked as upcoming.
       </p>
@@ -88,7 +88,7 @@ export default function Masterclasses() {
 
       <div className="mt-12 grid gap-10 lg:grid-cols-2">
         <div>
-          <h2 className="text-2xl font-bold text-[var(--navy)]">Core topics covered</h2>
+          <h2 className="text-2xl text-[var(--navy)]">Core topics covered</h2>
           <ol className="mt-4 space-y-2">
             {coreTopics.map((t, i) => (
               <li key={t} className="flex gap-3 text-sm text-gray-700">
@@ -101,7 +101,7 @@ export default function Masterclasses() {
           </ol>
         </div>
         <div>
-          <h2 className="text-2xl font-bold text-[var(--navy)]">Session readiness standards</h2>
+          <h2 className="text-2xl text-[var(--navy)]">Session readiness standards</h2>
           <div className="mt-4 space-y-4">
             {readiness.map(([stage, req]) => (
               <div key={stage} className="rounded-lg bg-white border border-gray-200 p-4">

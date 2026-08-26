@@ -1,11 +1,13 @@
 import Link from "next/link";
+import { Code2, Briefcase, Lightbulb, ShieldCheck } from "lucide-react";
+import HeroGraphic from "@/components/HeroGraphic";
 
 const audience = [
-  ["DEV Builders", "Developers and technical teams who create agents, integrations, workflows, and extensions using Agentic Org, MCP tools, connectors, and Pine Labs sandbox rails."],
-  ["Domain Experts", "Business, Finance, HR, Marketing, and Operations teams who bring real business problems and configure use cases on the Agentic portal."],
-  ["Product Thinkers", "Teams who convert use cases into scalable product ideas."],
-  ["Reviewers & Mentors", "Senior leaders and experts who guide feasibility, business relevance, and execution."],
-];
+  [Code2, "DEV Builders", "Developers and technical teams who create agents, integrations, workflows, and extensions using Agentic Org, MCP tools, connectors, and Pine Labs sandbox rails."],
+  [Briefcase, "Domain Experts", "Business, Finance, HR, Marketing, and Operations teams who bring real business problems and configure use cases on the Agentic portal."],
+  [Lightbulb, "Product Thinkers", "Teams who convert use cases into scalable product ideas."],
+  [ShieldCheck, "Reviewers & Mentors", "Senior leaders and experts who guide feasibility, business relevance, and execution."],
+] as const;
 
 const steps = [
   ["Access the portal", "All docs, recordings, setup guides, submission links, and event details live here."],
@@ -31,40 +33,48 @@ const outcomes = [
 export default function Home() {
   return (
     <>
-      <section className="bg-[var(--navy)] text-white">
-        <div className="mx-auto max-w-6xl px-4 py-16">
-          <p className="text-[var(--amber)] font-semibold text-sm uppercase tracking-widest">
-            Internal innovation program
-          </p>
-          <h1 className="mt-3 text-4xl sm:text-5xl font-bold tracking-tight max-w-3xl">
-            Learn, build, submit, and scale AI agents on Pine Labs rails.
-          </h1>
-          <p className="mt-5 max-w-2xl text-lg text-white/80">
-            Pine Labs.AI is a continuous masterclass and builder community program.
-            Build working agent prototypes with Agentic Org, P3P, Grantex, MCP tools,
-            connectors, and the Pine Labs sandbox — then submit them right here.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/submit" className="rounded-md bg-[var(--teal)] hover:bg-[var(--teal-dark)] px-5 py-2.5 font-semibold transition-colors">
-              Submit your build
-            </Link>
-            <Link href="/masterclasses" className="rounded-md border border-white/30 hover:bg-white/10 px-5 py-2.5 font-semibold transition-colors">
-              Explore masterclasses
-            </Link>
-            <Link href="/docs" className="rounded-md border border-white/30 hover:bg-white/10 px-5 py-2.5 font-semibold transition-colors">
-              Developer docs
-            </Link>
+      <section className="bg-[var(--navy)] text-white overflow-hidden">
+        <div className="mx-auto max-w-6xl px-4 py-16 grid lg:grid-cols-[1.2fr_1fr] gap-10 items-center">
+          <div>
+            <p className="text-[var(--amber)] font-semibold text-sm uppercase tracking-widest">
+              Internal innovation program
+            </p>
+            <h1 className="mt-3 text-4xl sm:text-5xl max-w-3xl">
+              Learn, build, submit, and scale AI agents on Pine Labs rails.
+            </h1>
+            <p className="mt-5 max-w-2xl text-lg text-white/80">
+              Pine Labs.AI is a continuous masterclass and builder community program.
+              Build working agent prototypes with Agentic Org, P3P, Grantex, MCP tools,
+              connectors, and the Pine Labs sandbox — then submit them right here.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link href="/submit" className="rounded-md bg-[var(--teal)] hover:bg-[var(--teal-dark)] px-5 py-2.5 font-semibold transition-colors">
+                Submit your build
+              </Link>
+              <Link href="/masterclasses" className="rounded-md border border-white/30 hover:bg-white/10 px-5 py-2.5 font-semibold transition-colors">
+                Explore masterclasses
+              </Link>
+              <Link href="/docs" className="rounded-md border border-white/30 hover:bg-white/10 px-5 py-2.5 font-semibold transition-colors">
+                Developer docs
+              </Link>
+            </div>
+          </div>
+          <div className="hidden lg:block" aria-hidden>
+            <HeroGraphic />
           </div>
         </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-12">
-        <h2 className="text-2xl font-bold text-[var(--navy)]">Who this is for</h2>
+        <h2 className="text-2xl text-[var(--navy)]">Who this is for</h2>
         <p className="mt-1 text-sm text-gray-600">Open to Pine Labs employees only, across functions and geographies.</p>
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {audience.map(([title, desc]) => (
+          {audience.map(([Icon, title, desc]) => (
             <div key={title} className="rounded-lg bg-white border border-gray-200 p-5 shadow-sm">
-              <h3 className="font-semibold text-[var(--teal-dark)]">{title}</h3>
+              <div className="flex h-9 w-9 items-center justify-center rounded-md bg-[var(--teal)]/10 text-[var(--teal-dark)]">
+                <Icon size={18} strokeWidth={2} aria-hidden />
+              </div>
+              <h3 className="mt-3 font-semibold text-[var(--teal-dark)]">{title}</h3>
               <p className="mt-2 text-sm text-gray-600">{desc}</p>
             </div>
           ))}
@@ -73,7 +83,7 @@ export default function Home() {
 
       <section className="bg-white border-y border-gray-200">
         <div className="mx-auto max-w-6xl px-4 py-12">
-          <h2 className="text-2xl font-bold text-[var(--navy)]">How participation works</h2>
+          <h2 className="text-2xl text-[var(--navy)]">How participation works</h2>
           <p className="mt-1 text-sm text-gray-600">From first login to joining the Core Team — seven steps.</p>
           <ol className="mt-8 relative">
             <div aria-hidden className="absolute left-[15px] top-2 bottom-2 w-px bg-gray-200 sm:left-[19px]" />
@@ -93,7 +103,7 @@ export default function Home() {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-12">
-        <h2 className="text-2xl font-bold text-[var(--navy)]">Expected outcomes</h2>
+        <h2 className="text-2xl text-[var(--navy)]">Expected outcomes</h2>
         <ul className="mt-4 grid gap-2 sm:grid-cols-2">
           {outcomes.map((o) => (
             <li key={o} className="flex gap-2 text-sm text-gray-700">

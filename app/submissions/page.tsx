@@ -5,7 +5,7 @@ export default function Submissions() {
     <div className="mx-auto max-w-6xl px-4 py-10">
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold text-[var(--navy)]">Submissions</h1>
+          <h1 className="text-3xl text-[var(--navy)]">Submissions</h1>
           <p className="mt-2 text-gray-600">
             Ideas, prototypes, and working solutions from the Pine Labs.AI builder community.
           </p>

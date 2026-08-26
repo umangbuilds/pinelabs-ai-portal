@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
-import { Syne, Plus_Jakarta_Sans } from "next/font/google";
+import { DM_Serif_Display, Noto_Sans } from "next/font/google";
 import NavBar from "@/components/NavBar";
 import "./globals.css";
 
 const BASE_PATH = "/pinelabs-ai-portal";
 const SITE_URL = `https://umangbuilds.github.io${BASE_PATH}`;
 
-const headlineFont = Syne({
+const headlineFont = DM_Serif_Display({
   variable: "--font-headline",
-  weight: ["700", "800"],
+  weight: "400",
   subsets: ["latin"],
 });
-const bodyFont = Plus_Jakarta_Sans({
+const bodyFont = Noto_Sans({
   variable: "--font-body",
   subsets: ["latin"],
 });

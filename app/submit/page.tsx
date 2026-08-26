@@ -17,7 +17,7 @@ const types = ["Idea", "Use case", "Prototype", "Agent workflow", "Working solut
 export default function Submit() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-10">
-      <h1 className="text-3xl font-bold text-[var(--navy)]">Submit your build</h1>
+      <h1 className="text-3xl text-[var(--navy)]">Submit your build</h1>
       <p className="mt-2 text-gray-600">
         Any Pine Labs employee can submit an idea, use case, prototype, agent
         workflow, or working solution. Submissions are reviewed by the expert panel.

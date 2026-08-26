@@ -1,7 +1,10 @@
+import { Rocket, Wrench, ShieldCheck } from "lucide-react";
+
 const groups = [
   {
     label: "Get started",
     tint: "border-l-[var(--teal)]",
+    icon: Rocket,
     sections: [
       {
         title: "Pine Labs.AI overview",
@@ -24,6 +27,7 @@ const groups = [
   {
     label: "Build your agent",
     tint: "border-l-[var(--amber)]",
+    icon: Wrench,
     sections: [
       {
         title: "MCP servers",
@@ -46,6 +50,7 @@ const groups = [
   {
     label: "Participate & stay safe",
     tint: "border-l-[var(--navy)]",
+    icon: ShieldCheck,
     sections: [
       {
         title: "Security and governance",
@@ -66,7 +71,7 @@ const groups = [
 export default function Docs() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-10">
-      <h1 className="text-3xl font-bold text-[var(--navy)]">Docs &amp; Setup</h1>
+      <h1 className="text-3xl text-[var(--navy)]">Docs &amp; Setup</h1>
       <p className="mt-2 max-w-3xl text-gray-600">
         The single source of truth for training material and developer docs:
         setup guides, starter repo links, sandbox access, MCP documentation, and
@@ -82,7 +87,12 @@ export default function Docs() {
 
       {groups.map((group) => (
         <div key={group.label} className="mt-10">
-          <h2 className="text-xl font-bold text-[var(--navy)]">{group.label}</h2>
+          <div className="flex items-center gap-2.5">
+            <div className="flex h-8 w-8 items-center justify-center rounded-md bg-[var(--navy)]/5 text-[var(--navy)]">
+              <group.icon size={17} strokeWidth={2} aria-hidden />
+            </div>
+            <h2 className="text-xl text-[var(--navy)]">{group.label}</h2>
+          </div>
           <div className="mt-4 space-y-3">
             {group.sections.map((s) => (
               <div key={s.title} className={`rounded-lg bg-white border border-gray-200 border-l-4 ${group.tint} p-5 shadow-sm sm:flex sm:gap-6`}>
