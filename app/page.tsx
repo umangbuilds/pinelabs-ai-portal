@@ -1,69 +1,142 @@
-import Image from "next/image";
+import Link from "next/link";
+
+const audience = [
+  ["DEV Builders", "Developers and technical teams who create agents, integrations, workflows, and extensions using Agentic Org, MCP tools, connectors, and Pine Labs sandbox rails."],
+  ["Domain Experts", "Business, Finance, HR, Marketing, and Operations teams who bring real business problems and configure use cases on the Agentic portal."],
+  ["Product Thinkers", "Teams who convert use cases into scalable product ideas."],
+  ["Reviewers & Mentors", "Senior leaders and experts who guide feasibility, business relevance, and execution."],
+];
+
+const steps = [
+  ["Access the portal", "All docs, recordings, setup guides, submission links, and event details live here."],
+  ["Attend or watch masterclasses", "Join live Friday masterclasses or watch recorded sessions."],
+  ["Build and submit", "Submit an idea, use case, prototype, agent workflow, or working solution."],
+  ["Get expert panel support", "The expert panel guides builders on technical, product, and business topics."],
+  ["Selection and awards", "Innovative submissions are reviewed by the expert panel, then recognized and awarded."],
+  ["Implementation", "Top ideas are implemented across Pine Labs products, use cases, and internal workflows."],
+  ["Join the Core Team", "Top contributors are invited to the Core Pine Labs.AI Team."],
+];
+
+const outcomes = [
+  "A trained internal builder community",
+  "A reusable library of masterclass recordings and training material",
+  "A developer-ready documentation hub",
+  "A continuous pipeline of ideas and working agent prototypes",
+  "A structured expert panel to support builders",
+  "A recognition model for innovative contributors",
+  "A Core Pine Labs.AI Team formed from top contributors",
+  "A repeatable model for ongoing agentic innovation at Pine Labs",
+];
+
+const ownership = [
+  ["Program launch & kickoff", "Amrish"],
+  ["Pine Labs.AI overview", "Sanjeev"],
+  ["Agentic stack overview", "Sanjeev"],
+  ["Deep dive on P3P rails", "Chandan"],
+  ["MCP servers & API execution", "Chandan / Gaurav"],
+  ["Agentic Org / Grantex setup", "Rahul"],
+  ["First agent build quickstart", "Rahul / Umang"],
+  ["Security & governance", "Lokesh"],
+  ["Portal walkthrough & submission process", "Umang"],
+  ["Program communication", "Marketing"],
+  ["Event coordination & execution", "HR"],
+  ["Program committee & internal champions", "Chandan / Gaurav"],
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <>
+      <section className="bg-[var(--navy)] text-white">
+        <div className="mx-auto max-w-6xl px-4 py-16">
+          <p className="text-[var(--amber)] font-semibold text-sm uppercase tracking-widest">
+            Internal innovation program
           </p>
+          <h1 className="mt-3 text-4xl sm:text-5xl font-bold tracking-tight max-w-3xl">
+            Learn, build, submit, and scale AI agents on Pine Labs rails.
+          </h1>
+          <p className="mt-5 max-w-2xl text-lg text-white/80">
+            Pine Labs.AI is a continuous masterclass and builder community program.
+            Build working agent prototypes with Agentic Org, P3P, Grantex, MCP tools,
+            connectors, and the Pine Labs sandbox — then submit them right here.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link href="/submit" className="rounded-md bg-[var(--teal)] hover:bg-[var(--teal-dark)] px-5 py-2.5 font-semibold transition-colors">
+              Submit your build
+            </Link>
+            <Link href="/masterclasses" className="rounded-md border border-white/30 hover:bg-white/10 px-5 py-2.5 font-semibold transition-colors">
+              Explore masterclasses
+            </Link>
+            <Link href="/docs" className="rounded-md border border-white/30 hover:bg-white/10 px-5 py-2.5 font-semibold transition-colors">
+              Developer docs
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 py-12">
+        <h2 className="text-2xl font-bold text-[var(--navy)]">Who this is for</h2>
+        <p className="mt-1 text-sm text-gray-600">Open to Pine Labs employees only, across functions and geographies.</p>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {audience.map(([title, desc]) => (
+            <div key={title} className="rounded-lg bg-white border border-gray-200 p-5 shadow-sm">
+              <h3 className="font-semibold text-[var(--teal-dark)]">{title}</h3>
+              <p className="mt-2 text-sm text-gray-600">{desc}</p>
+            </div>
+          ))}
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section className="bg-white border-y border-gray-200">
+        <div className="mx-auto max-w-6xl px-4 py-12">
+          <h2 className="text-2xl font-bold text-[var(--navy)]">How participation works</h2>
+          <ol className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {steps.map(([title, desc], i) => (
+              <li key={title} className="rounded-lg border border-gray-200 p-5 bg-[var(--paper)]">
+                <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-[var(--navy)] text-white text-sm font-bold">
+                  {i + 1}
+                </span>
+                <h3 className="mt-3 font-semibold">{title}</h3>
+                <p className="mt-1 text-sm text-gray-600">{desc}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 py-12 grid gap-10 lg:grid-cols-2">
+        <div>
+          <h2 className="text-2xl font-bold text-[var(--navy)]">Expected outcomes</h2>
+          <ul className="mt-4 space-y-2">
+            {outcomes.map((o) => (
+              <li key={o} className="flex gap-2 text-sm text-gray-700">
+                <span className="text-[var(--teal)] font-bold">✓</span>
+                {o}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h2 className="text-2xl font-bold text-[var(--navy)]">Ownership matrix</h2>
+          <div className="mt-4 overflow-x-auto rounded-lg border border-gray-200 bg-white">
+            <table className="w-full text-sm">
+              <thead className="bg-[var(--navy)] text-white text-left">
+                <tr>
+                  <th className="px-4 py-2 font-semibold">Area / Deliverable</th>
+                  <th className="px-4 py-2 font-semibold">Responsible</th>
+                </tr>
+              </thead>
+              <tbody>
+                {ownership.map(([area, owner], i) => (
+                  <tr key={area} className={i % 2 ? "bg-gray-50" : "bg-white"}>
+                    <td className="px-4 py-2">{area}</td>
+                    <td className="px-4 py-2 font-medium text-[var(--teal-dark)]">{owner}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
