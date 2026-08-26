@@ -71,6 +71,12 @@ export default function Submit() {
       return;
     }
 
+    if (!isSupabaseConfigured) {
+      // No database connected yet — show the real confirmation screen without persisting anything.
+      setDone(true);
+      return;
+    }
+
     setSubmitting(true);
     const payload = {
       name: form.get("name") as string,
@@ -105,13 +111,28 @@ export default function Submit() {
   if (done) {
     return (
       <div className="mx-auto max-w-2xl px-4 py-20 text-center">
-        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[var(--navy)] text-white text-2xl">✓</div>
-        <h1 className="mt-5 text-3xl text-[var(--navy)]">Submission received</h1>
-        <p className="mt-3 text-gray-600">
-          Thank you for contributing to pinelabs.ai. The expert panel reviews all
-          submissions — selected ideas are recognized, awarded, and considered for
-          implementation across Pine Labs products and workflows.
-        </p>
+        <div className={`mx-auto flex h-14 w-14 items-center justify-center rounded-full text-white text-2xl ${isSupabaseConfigured ? "bg-[var(--navy)]" : "bg-gray-400"}`}>
+          {isSupabaseConfigured ? "✓" : "!"}
+        </div>
+        <h1 className="mt-5 text-3xl text-[var(--navy)]">
+          {isSupabaseConfigured ? "Submission received" : "Form looks good — but nothing was saved"}
+        </h1>
+        {isSupabaseConfigured ? (
+          <p className="mt-3 text-gray-600">
+            Thank you for contributing to pinelabs.ai. The expert panel reviews all
+            submissions — selected ideas are recognized, awarded, and considered for
+            implementation across Pine Labs products and workflows.
+          </p>
+        ) : (
+          <div className="mt-3 rounded-lg border-l-4 border-amber-400 bg-amber-50 p-4 text-left text-sm text-gray-800">
+            <strong>Database not yet connected.</strong> This is a static preview of
+            the portal, so your answers were never sent anywhere or stored —
+            this confirmation screen is only showing you what submitters will see
+            once the database is live. Please don&apos;t treat this as a real
+            submission; use the official submission channel from the program
+            announcement in the meantime.
+          </div>
+        )}
         <div className="mt-8 flex justify-center gap-3">
           <Link href="/submissions" className="rounded-md bg-[var(--navy)] text-white px-5 py-2.5 font-semibold hover:opacity-90">
             View all submissions
@@ -127,27 +148,6 @@ export default function Submit() {
     );
   }
 
-  if (!isSupabaseConfigured) {
-    return (
-      <div className="mx-auto max-w-3xl px-4 py-10">
-        <h1 className="text-3xl text-[var(--navy)]">Submit your build</h1>
-        <p className="mt-2 text-gray-600">
-          Any Pine Labs employee can submit an idea, use case, prototype, agent
-          workflow, or working solution.
-        </p>
-        <div className="mt-6 rounded-lg border-l-4 border-amber-400 bg-amber-50 p-4 text-sm text-gray-800">
-          <strong>Submissions aren&apos;t connected to a database yet.</strong> This
-          deployment is missing its Supabase configuration
-          (<code className="bg-white/60 px-1 rounded">NEXT_PUBLIC_SUPABASE_URL</code> /{" "}
-          <code className="bg-white/60 px-1 rounded">NEXT_PUBLIC_SUPABASE_ANON_KEY</code>),
-          so this form can&apos;t save anything right now. See{" "}
-          <code className="bg-white/60 px-1 rounded">supabase/schema.sql</code> and the
-          project README for setup steps.
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div className="mx-auto max-w-3xl px-4 py-10">
       <h1 className="text-3xl text-[var(--navy)]">Submit your build</h1>
@@ -155,6 +155,14 @@ export default function Submit() {
         Any Pine Labs employee can submit an idea, use case, prototype, agent
         workflow, or working solution. Submissions are reviewed by the expert panel.
       </p>
+
+      {!isSupabaseConfigured && (
+        <div className="mt-6 rounded-lg border-l-4 border-amber-400 bg-amber-50 p-4 text-sm text-gray-800">
+          <strong>Database not connected yet.</strong> You can fill out and submit
+          this form to see exactly what the flow looks like, but nothing you enter
+          is saved or sent anywhere until the portal is wired to a live database.
+        </div>
+      )}
 
       <form onSubmit={onSubmit} className="mt-8 rounded-lg bg-white border border-gray-200 p-6 shadow-sm">
         <input type="text" name="honeypot" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
