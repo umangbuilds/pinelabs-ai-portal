@@ -3,7 +3,7 @@ import { PlayCircle } from "lucide-react";
 
 const recordings = [
   {
-    title: "Pine Labs.AI overview",
+    title: "pinelabs.ai overview",
     desc: "Program vision, purpose, and leadership context.",
   },
   {
@@ -41,7 +41,7 @@ export default function Masterclasses() {
     <div className="mx-auto max-w-6xl px-4 py-10">
       <h1 className="text-3xl text-[var(--navy)]">Masterclasses</h1>
       <p className="mt-2 max-w-3xl text-gray-600">
-        Recorded sessions from Pine Labs.AI Masterclass: Build Working Agents on
+        Recorded sessions from pinelabs.ai Masterclass: Build Working Agents on
         Pine Labs Rails. Watch on your own time — every Friday session lands here.
       </p>
       <p className="mt-1 text-sm text-gray-500">

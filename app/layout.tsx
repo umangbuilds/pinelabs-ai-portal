@@ -16,7 +16,7 @@ const bodyFont = Noto_Sans({
   subsets: ["latin"],
 });
 
-const title = "Pine Labs.AI Portal";
+const title = "pinelabs.ai Portal";
 const description =
   "Masterclass and Builder Community Program — learn, build, and submit AI agent ideas on Pine Labs rails.";
 
@@ -55,7 +55,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="flex-1">{children}</main>
         <footer className="bg-[var(--navy-deep)] text-white/70 text-sm">
           <div className="mx-auto max-w-6xl px-4 py-6 flex flex-wrap items-center justify-between gap-2">
-            <span>Pine Labs.AI — Masterclass &amp; Builder Community Program</span>
+            <span>pinelabs.ai — Masterclass &amp; Builder Community Program</span>
             <span>Internal circulation only · Pine Labs employees</span>
           </div>
         </footer>

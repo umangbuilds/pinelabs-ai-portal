@@ -5,7 +5,7 @@ const events = [
     type: "Kickoff",
     icon: Rocket,
     tint: "border-l-[var(--amber)]",
-    title: "Program kickoff + Pine Labs.AI overview",
+    title: "Program kickoff + pinelabs.ai overview",
     detail: "Formal launch, leadership message, and program vision. One-time session.",
     when: "Date to be announced",
   },
@@ -46,7 +46,7 @@ const events = [
     icon: Trophy,
     tint: "border-l-[var(--amber)]",
     title: "Demo Day & awards",
-    detail: "Selected builders present live. Winners are recognized and awarded, and the Core Pine Labs.AI Team is announced.",
+    detail: "Selected builders present live. Winners are recognized and awarded, and the Core pinelabs.ai Team is announced.",
     when: "Date to be announced",
   },
 ];
@@ -56,7 +56,7 @@ export default function Events() {
     <div className="mx-auto max-w-6xl px-4 py-10">
       <h1 className="text-3xl text-[var(--navy)]">Events &amp; Expert Panel</h1>
       <p className="mt-2 max-w-3xl text-gray-600">
-        Everything on the Pine Labs.AI calendar — kickoff, recurring masterclasses
+        Everything on the pinelabs.ai calendar — kickoff, recurring masterclasses
         and office hours, the submission deadline, and Demo Day. Exact dates land
         in the official program announcement; this list updates as they're confirmed.
       </p>

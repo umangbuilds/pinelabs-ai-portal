@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { useState } from "react";
 
+const BASE_PATH = "/pinelabs-ai-portal";
+
 const nav = [
   { href: "/", label: "Home" },
   { href: "/masterclasses", label: "Masterclasses" },
@@ -16,11 +18,12 @@ export default function NavBar() {
 
   return (
     <header className="sticky top-0 z-50 bg-[var(--navy)] text-white shadow-md">
-      <div className="h-1 bg-[var(--amber)]" />
+      <div className="h-1 bg-[var(--teal)]" />
       <div className="mx-auto max-w-6xl px-4 py-3 flex items-center gap-6">
-        <Link href="/" className="flex items-baseline gap-1 shrink-0 font-headline">
-          <span className="text-lg font-bold tracking-tight">Pine Labs</span>
-          <span className="text-lg font-bold text-[var(--amber)]">.AI</span>
+        <Link href="/" className="flex flex-col items-start shrink-0">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={`${BASE_PATH}/pine-labs-wordmark-white.png`} alt="Pine Labs" className="h-6 w-auto" />
+          <span className="mt-0.5 ml-0.5 text-[10px] font-extrabold tracking-widest text-[var(--teal)] leading-none">.AI PORTAL</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-1 text-sm">

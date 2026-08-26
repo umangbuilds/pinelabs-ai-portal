@@ -16,7 +16,7 @@ const steps = [
   ["Get expert panel support", "The expert panel guides builders on technical, product, and business topics."],
   ["Selection and awards", "Innovative submissions are reviewed by the expert panel, then recognized and awarded."],
   ["Implementation", "Top ideas are implemented across Pine Labs products, use cases, and internal workflows."],
-  ["Join the Core Team", "Top contributors are invited to the Core Pine Labs.AI Team."],
+  ["Join the Core Team", "Top contributors are invited to the Core pinelabs.ai Team."],
 ];
 
 const outcomes = [
@@ -26,7 +26,7 @@ const outcomes = [
   "A continuous pipeline of ideas and working agent prototypes",
   "A structured expert panel to support builders",
   "A recognition model for innovative contributors",
-  "A Core Pine Labs.AI Team formed from top contributors",
+  "A Core pinelabs.ai Team formed from top contributors",
   "A repeatable model for ongoing agentic innovation at Pine Labs",
 ];
 
@@ -43,7 +43,7 @@ export default function Home() {
               Learn, build, submit, and scale AI agents on Pine Labs rails.
             </h1>
             <p className="mt-5 max-w-2xl text-lg text-white/80">
-              Pine Labs.AI is a continuous masterclass and builder community program.
+              pinelabs.ai is a continuous masterclass and builder community program.
               Build working agent prototypes with Agentic Org, P3P, Grantex, MCP tools,
               connectors, and the Pine Labs sandbox — then submit them right here.
             </p>

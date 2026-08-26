@@ -1,11 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --navy: #13304a;
-  --navy-deep: #0e2437;
-  --teal: #0f9691;
-  --teal-dark: #0b706c;
-  --amber: #f2a71b;
+  /* Pine Labs brand: dark teal (#003323) + mint green (#20D39C), per brand book */
+  --navy: #003323;
+  --navy-deep: #00190f;
+  --teal: #20d39c;
+  --teal-dark: #149267;
+  --amber: #999999;
   --paper: #f6f8fa;
   --ink: #1c2b36;
 }

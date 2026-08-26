@@ -1,7 +1,7 @@
 import { Rocket, Wrench, ShieldCheck, GraduationCap } from "lucide-react";
 
 const coreTopics = [
-  "Introduction to Pine Labs.AI",
+  "Introduction to pinelabs.ai",
   "Why agentic systems matter for Pine Labs",
   "Pine Labs rails, P3P, Grantex, MCP servers, and connectors",
   "Pine Labs sandbox setup and test merchant configuration",
@@ -9,7 +9,7 @@ const coreTopics = [
   "Connector ecosystem: Tally, Oracle Fusion, GST portal, Darwin, Jira, GitHub, Facebook, and others",
   "Building one simple agent from scratch",
   "Running one end-to-end sandbox payment or API flow",
-  "Pine Labs.AI portal walkthrough",
+  "pinelabs.ai portal walkthrough",
   "Idea submission and community participation process",
 ];
 
@@ -26,7 +26,7 @@ const groups = [
     icon: Rocket,
     sections: [
       {
-        title: "Pine Labs.AI overview",
+        title: "pinelabs.ai overview",
         items: ["Program note and objective", "Architecture overview", "Use-case examples"],
       },
       {
