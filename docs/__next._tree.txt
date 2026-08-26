@@ -1,0 +1,4 @@
+:HL["/pinelabs-ai-portal/_next/static/chunks/1alsnea8bzh5e.css","style"]
+:HL["/pinelabs-ai-portal/_next/static/media/0c8f209abc35ee02-s.p.0c0g8ifvh7k7-.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/pinelabs-ai-portal/_next/static/media/dc6d2a64e9dbf3bc-s.p.3mjzw95c0-_52.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"docs","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"6_GKFo8k4KFK0GIeKH6Va"}
