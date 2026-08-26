@@ -41,7 +41,7 @@ export default function NavBar() {
         <div className="ml-auto hidden md:block">
           <Link
             href="/submit"
-            className="rounded-md bg-[var(--teal)] hover:bg-[var(--teal-dark)] px-4 py-2 text-sm font-semibold transition-colors"
+            className="rounded-md bg-[var(--teal)] hover:bg-[var(--teal-dark)] px-4 py-2 text-sm font-semibold text-[var(--navy)] transition-colors"
           >
             Submit an idea
           </Link>
@@ -78,7 +78,7 @@ export default function NavBar() {
           <Link
             href="/submit"
             onClick={() => setOpen(false)}
-            className="mt-2 block rounded-md bg-[var(--teal)] px-3 py-3 text-center text-base font-semibold hover:bg-[var(--teal-dark)]"
+            className="mt-2 block rounded-md bg-[var(--teal)] px-3 py-3 text-center text-base font-semibold text-[var(--navy)] hover:bg-[var(--teal-dark)]"
           >
             Submit an idea
           </Link>

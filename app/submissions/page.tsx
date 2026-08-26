@@ -12,11 +12,11 @@ const statusStyles: Record<string, string> = {
   Awarded: "bg-[var(--navy)] text-white border-[var(--navy)]",
 };
 
-const trackColors: Record<string, string> = {
-  "Payments & settlements": "bg-[var(--teal)]",
-  "Merchant operations": "bg-[var(--amber)]",
-  "Customer support automation": "bg-[var(--navy)]",
-  "Risk & compliance": "bg-[var(--teal-dark)]",
+const trackBorders: Record<string, string> = {
+  "Payments & settlements": "border-l-[var(--teal)]",
+  "Merchant operations": "border-l-gray-400",
+  "Customer support automation": "border-l-[var(--navy)]",
+  "Risk & compliance": "border-l-[var(--teal-dark)]",
 };
 
 type Row = {
@@ -71,7 +71,7 @@ export default function Submissions() {
             Ideas, prototypes, and working solutions from the pinelabs.ai builder community.
           </p>
         </div>
-        <Link href="/submit" className="rounded-md bg-[var(--teal)] hover:bg-[var(--teal-dark)] px-5 py-2.5 font-semibold text-white transition-colors shrink-0">
+        <Link href="/submit" className="rounded-md bg-[var(--teal)] hover:bg-[var(--teal-dark)] px-5 py-2.5 font-semibold text-[var(--navy)] transition-colors shrink-0">
           Submit yours
         </Link>
       </div>
@@ -105,10 +105,10 @@ export default function Submissions() {
       {(!isSupabaseConfigured || isLive) && list.length > 0 && (
         <div className="mt-6 divide-y divide-gray-200 rounded-lg border border-gray-200 bg-white shadow-sm">
           {list.map((s, i) => (
-            <div key={s.id} className="flex items-center gap-4 p-4">
+            <div key={s.id} className={`flex items-center gap-4 p-4 border-l-4 ${trackBorders[s.track] ?? "border-l-gray-300"}`}>
               <span className="w-5 shrink-0 text-center text-sm font-semibold text-gray-400">{i + 1}</span>
 
-              <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-sm font-bold text-white ${trackColors[s.track] ?? "bg-gray-400"}`}>
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-sm font-bold text-white bg-[var(--navy)]">
                 {initials(s.team_name)}
               </div>
 
@@ -126,7 +126,7 @@ export default function Submissions() {
               </div>
 
               <div className="flex shrink-0 flex-col items-center rounded-md border border-gray-200 px-3 py-1.5">
-                <Flame size={14} className="text-[var(--teal)]" strokeWidth={2} aria-hidden />
+                <Flame size={14} className="text-[var(--teal-dark)]" strokeWidth={2} aria-hidden />
                 <span className="text-sm font-bold text-[var(--navy)]">{s.kudos}</span>
               </div>
             </div>

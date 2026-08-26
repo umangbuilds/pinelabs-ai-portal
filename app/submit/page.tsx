@@ -105,7 +105,7 @@ export default function Submit() {
   if (done) {
     return (
       <div className="mx-auto max-w-2xl px-4 py-20 text-center">
-        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[var(--teal)] text-white text-2xl">✓</div>
+        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[var(--navy)] text-white text-2xl">✓</div>
         <h1 className="mt-5 text-3xl text-[var(--navy)]">Submission received</h1>
         <p className="mt-3 text-gray-600">
           Thank you for contributing to pinelabs.ai. The expert panel reviews all
@@ -277,7 +277,7 @@ export default function Submit() {
         <button
           type="submit"
           disabled={submitting}
-          className="mt-6 rounded-md bg-[var(--teal)] hover:bg-[var(--teal-dark)] disabled:opacity-60 px-6 py-2.5 font-semibold text-white transition-colors"
+          className="mt-6 rounded-md bg-[var(--teal)] hover:bg-[var(--teal-dark)] disabled:opacity-60 px-6 py-2.5 font-semibold text-[var(--navy)] transition-colors"
         >
           {submitting ? "Submitting…" : "Submit to the expert panel"}
         </button>

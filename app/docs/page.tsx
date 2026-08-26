@@ -147,7 +147,7 @@ export default function Docs() {
             <ol className="mt-3 space-y-2">
               {coreTopics.map((t, i) => (
                 <li key={t} className="flex gap-3 text-sm text-gray-700">
-                  <span className="shrink-0 inline-flex h-6 w-6 items-center justify-center rounded-full bg-[var(--teal)] text-white text-xs font-bold">
+                  <span className="shrink-0 inline-flex h-6 w-6 items-center justify-center rounded-full bg-[var(--teal)] text-[var(--navy)] text-xs font-bold">
                     {i + 1}
                   </span>
                   {t}
