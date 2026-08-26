@@ -13,5 +13,12 @@
 body {
   background: var(--paper);
   color: var(--ink);
-  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
 }
+
+h1, h2, h3, h4,
+.font-headline {
+  font-family: var(--font-headline), Georgia, serif;
+  letter-spacing: -0.01em;
+}
+

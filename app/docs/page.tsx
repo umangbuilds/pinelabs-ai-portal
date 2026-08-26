@@ -1,47 +1,65 @@
-const docSections = [
+const groups = [
   {
-    title: "Pine Labs.AI overview",
-    items: ["Program note and objective", "Architecture overview", "Use-case examples"],
+    label: "Get started",
+    tint: "border-l-[var(--teal)]",
+    sections: [
+      {
+        title: "Pine Labs.AI overview",
+        items: ["Program note and objective", "Architecture overview", "Use-case examples"],
+      },
+      {
+        title: "Agentic stack",
+        items: ["Agentic Org", "P3P rails", "Grantex", "MCP servers", "Connectors", "Pine Labs rails"],
+      },
+      {
+        title: "Starter repo",
+        items: ["Public sanitized mirror repo", "Clone guide", "Setup instructions", "Customization guide"],
+      },
+      {
+        title: "Sandbox setup",
+        items: ["Sandbox credential guide", "Test merchant configuration", "Environment variable setup"],
+      },
+    ],
   },
   {
-    title: "Agentic stack",
-    items: ["Agentic Org", "P3P rails", "Grantex", "MCP servers", "Connectors", "Pine Labs rails"],
+    label: "Build your agent",
+    tint: "border-l-[var(--amber)]",
+    sections: [
+      {
+        title: "MCP servers",
+        items: ["MCP tool documentation", "API execution reference", "List of available tools"],
+      },
+      {
+        title: "First agent build",
+        items: ["Step-by-step quickstart to build one simple working agent"],
+      },
+      {
+        title: "End-to-end payment flow",
+        items: ["Trigger a sandbox payment / API execution from an agent"],
+      },
+      {
+        title: "Connectors",
+        items: ["Tally", "Oracle Fusion", "GST portal", "Darwin", "Jira", "GitHub", "Facebook", "…and more"],
+      },
+    ],
   },
   {
-    title: "Starter repo",
-    items: ["Public sanitized mirror repo", "Clone guide", "Setup instructions", "Customization guide"],
-  },
-  {
-    title: "Sandbox setup",
-    items: ["Sandbox credential guide", "Test merchant configuration", "Environment variable setup"],
-  },
-  {
-    title: "MCP servers",
-    items: ["MCP tool documentation", "API execution reference", "List of available tools"],
-  },
-  {
-    title: "First agent build",
-    items: ["Step-by-step quickstart to build one simple working agent"],
-  },
-  {
-    title: "End-to-end payment flow",
-    items: ["Trigger a sandbox payment / API execution from an agent"],
-  },
-  {
-    title: "Connectors",
-    items: ["Tally", "Oracle Fusion", "GST portal", "Darwin", "Jira", "GitHub", "Facebook", "…and more"],
-  },
-  {
-    title: "Security and governance",
-    items: ["Data usage rules", "Credential handling", "Sandbox-only policy", "Responsible AI guidelines"],
-  },
-  {
-    title: "Submission process",
-    items: ["Submission form", "Demo template", "Selection process", "Recognition criteria"],
-  },
-  {
-    title: "Troubleshooting",
-    items: ["FAQ", "Common setup issues", "Support contacts", "Office hours schedule"],
+    label: "Participate & stay safe",
+    tint: "border-l-[var(--navy)]",
+    sections: [
+      {
+        title: "Security and governance",
+        items: ["Data usage rules", "Credential handling", "Sandbox-only policy", "Responsible AI guidelines"],
+      },
+      {
+        title: "Submission process",
+        items: ["Submission form", "Demo template", "Selection process", "Recognition criteria"],
+      },
+      {
+        title: "Troubleshooting",
+        items: ["FAQ", "Common setup issues", "Support contacts", "Office hours schedule"],
+      },
+    ],
   },
 ];
 
@@ -62,24 +80,30 @@ export default function Docs() {
         live merchant data. See Security and governance below.
       </div>
 
-      <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {docSections.map((s) => (
-          <div key={s.title} className="rounded-lg bg-white border border-gray-200 p-5 shadow-sm">
-            <h2 className="font-semibold text-[var(--navy)]">{s.title}</h2>
-            <ul className="mt-3 space-y-1.5">
-              {s.items.map((i) => (
-                <li key={i} className="flex gap-2 text-sm text-gray-600">
-                  <span className="text-[var(--teal)]">›</span>
-                  {i}
-                </li>
-              ))}
-            </ul>
-            <p className="mt-4 text-xs text-gray-400">
-              Docs are being published by section owners — links will appear here.
-            </p>
+      {groups.map((group) => (
+        <div key={group.label} className="mt-10">
+          <h2 className="text-xl font-bold text-[var(--navy)]">{group.label}</h2>
+          <div className="mt-4 space-y-3">
+            {group.sections.map((s) => (
+              <div key={s.title} className={`rounded-lg bg-white border border-gray-200 border-l-4 ${group.tint} p-5 shadow-sm sm:flex sm:gap-6`}>
+                <h3 className="font-semibold text-[var(--navy)] sm:w-56 shrink-0">{s.title}</h3>
+                <ul className="mt-2 sm:mt-0 flex flex-wrap gap-x-4 gap-y-1.5">
+                  {s.items.map((i) => (
+                    <li key={i} className="flex items-center gap-1.5 text-sm text-gray-600">
+                      <span className="text-[var(--teal)]">›</span>
+                      {i}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
+
+      <p className="mt-8 text-xs text-gray-400">
+        Docs are being published by section owners — links will appear inline as each is ready.
+      </p>
     </div>
   );
 }

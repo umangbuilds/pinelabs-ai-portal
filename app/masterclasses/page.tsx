@@ -14,42 +14,34 @@ const coreTopics = [
 const recordings = [
   {
     title: "Pine Labs.AI overview",
-    owner: "Sanjeev",
     desc: "Program vision, purpose, and leadership context.",
   },
   {
     title: "Agentic stack overview",
-    owner: "Sanjeev",
     desc: "Agentic Org, P3P, Grantex, MCP servers, connectors, and Pine Labs rails.",
   },
   {
     title: "Deep dive on P3P rails",
-    owner: "Chandan",
     desc: "P3P rails overview, key use cases, and sandbox setup.",
   },
   {
     title: "MCP servers and API execution",
-    owner: "Chandan / Gaurav",
     desc: "MCP tool documentation, API execution reference, and available tools.",
   },
   {
     title: "Agentic Org / Grantex setup",
-    owner: "Rahul",
     desc: "Setup guide, tool configuration, connectors, and enablement docs.",
   },
   {
     title: "First agent build quickstart",
-    owner: "Rahul / Umang",
     desc: "Step-by-step quickstart to build one simple working agent.",
   },
   {
     title: "Security and governance",
-    owner: "Lokesh",
     desc: "Data usage rules, credential handling, sandbox-only policy, responsible AI.",
   },
   {
     title: "Portal walkthrough and submission process",
-    owner: "Umang",
     desc: "Idea submission flow, demo template, selection process, recognition criteria.",
   },
 ];
@@ -90,7 +82,6 @@ export default function Masterclasses() {
             </span>
             <h3 className="mt-3 font-semibold">{r.title}</h3>
             <p className="mt-1 text-sm text-gray-600 flex-1">{r.desc}</p>
-            <p className="mt-3 text-xs text-gray-500">Owner: {r.owner}</p>
           </div>
         ))}
       </div>

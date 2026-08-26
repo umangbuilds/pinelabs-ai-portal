@@ -28,21 +28,6 @@ const outcomes = [
   "A repeatable model for ongoing agentic innovation at Pine Labs",
 ];
 
-const ownership = [
-  ["Program launch & kickoff", "Amrish"],
-  ["Pine Labs.AI overview", "Sanjeev"],
-  ["Agentic stack overview", "Sanjeev"],
-  ["Deep dive on P3P rails", "Chandan"],
-  ["MCP servers & API execution", "Chandan / Gaurav"],
-  ["Agentic Org / Grantex setup", "Rahul"],
-  ["First agent build quickstart", "Rahul / Umang"],
-  ["Security & governance", "Lokesh"],
-  ["Portal walkthrough & submission process", "Umang"],
-  ["Program communication", "Marketing"],
-  ["Event coordination & execution", "HR"],
-  ["Program committee & internal champions", "Chandan / Gaurav"],
-];
-
 export default function Home() {
   return (
     <>
@@ -89,53 +74,34 @@ export default function Home() {
       <section className="bg-white border-y border-gray-200">
         <div className="mx-auto max-w-6xl px-4 py-12">
           <h2 className="text-2xl font-bold text-[var(--navy)]">How participation works</h2>
-          <ol className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <p className="mt-1 text-sm text-gray-600">From first login to joining the Core Team — seven steps.</p>
+          <ol className="mt-8 relative">
+            <div aria-hidden className="absolute left-[15px] top-2 bottom-2 w-px bg-gray-200 sm:left-[19px]" />
             {steps.map(([title, desc], i) => (
-              <li key={title} className="rounded-lg border border-gray-200 p-5 bg-[var(--paper)]">
-                <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-[var(--navy)] text-white text-sm font-bold">
+              <li key={title} className="relative flex gap-4 sm:gap-5 pb-8 last:pb-0">
+                <span className="relative z-10 flex h-8 w-8 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-full bg-[var(--navy)] text-white text-sm font-bold ring-4 ring-white">
                   {i + 1}
                 </span>
-                <h3 className="mt-3 font-semibold">{title}</h3>
-                <p className="mt-1 text-sm text-gray-600">{desc}</p>
+                <div className="pt-1">
+                  <h3 className="font-semibold">{title}</h3>
+                  <p className="mt-1 text-sm text-gray-600">{desc}</p>
+                </div>
               </li>
             ))}
           </ol>
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-12 grid gap-10 lg:grid-cols-2">
-        <div>
-          <h2 className="text-2xl font-bold text-[var(--navy)]">Expected outcomes</h2>
-          <ul className="mt-4 space-y-2">
-            {outcomes.map((o) => (
-              <li key={o} className="flex gap-2 text-sm text-gray-700">
-                <span className="text-[var(--teal)] font-bold">✓</span>
-                {o}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h2 className="text-2xl font-bold text-[var(--navy)]">Ownership matrix</h2>
-          <div className="mt-4 overflow-x-auto rounded-lg border border-gray-200 bg-white">
-            <table className="w-full text-sm">
-              <thead className="bg-[var(--navy)] text-white text-left">
-                <tr>
-                  <th className="px-4 py-2 font-semibold">Area / Deliverable</th>
-                  <th className="px-4 py-2 font-semibold">Responsible</th>
-                </tr>
-              </thead>
-              <tbody>
-                {ownership.map(([area, owner], i) => (
-                  <tr key={area} className={i % 2 ? "bg-gray-50" : "bg-white"}>
-                    <td className="px-4 py-2">{area}</td>
-                    <td className="px-4 py-2 font-medium text-[var(--teal-dark)]">{owner}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
+      <section className="mx-auto max-w-6xl px-4 py-12">
+        <h2 className="text-2xl font-bold text-[var(--navy)]">Expected outcomes</h2>
+        <ul className="mt-4 grid gap-2 sm:grid-cols-2">
+          {outcomes.map((o) => (
+            <li key={o} className="flex gap-2 text-sm text-gray-700">
+              <span className="text-[var(--teal)] font-bold">✓</span>
+              {o}
+            </li>
+          ))}
+        </ul>
       </section>
     </>
   );
