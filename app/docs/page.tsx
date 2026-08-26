@@ -1,4 +1,23 @@
-import { Rocket, Wrench, ShieldCheck } from "lucide-react";
+import { Rocket, Wrench, ShieldCheck, GraduationCap } from "lucide-react";
+
+const coreTopics = [
+  "Introduction to Pine Labs.AI",
+  "Why agentic systems matter for Pine Labs",
+  "Pine Labs rails, P3P, Grantex, MCP servers, and connectors",
+  "Pine Labs sandbox setup and test merchant configuration",
+  "MCP servers and API execution tools",
+  "Connector ecosystem: Tally, Oracle Fusion, GST portal, Darwin, Jira, GitHub, Facebook, and others",
+  "Building one simple agent from scratch",
+  "Running one end-to-end sandbox payment or API flow",
+  "Pine Labs.AI portal walkthrough",
+  "Idea submission and community participation process",
+];
+
+const readiness = [
+  ["Before the masterclass", "Session objective, setup guide, demo flow, prerequisite links, and expected output published on the portal."],
+  ["During the masterclass", "Live walkthrough, questions captured, blockers noted, participants directed to the right portal resources."],
+  ["After the masterclass", "Recording uploaded, FAQ updated, reference material attached, follow-up tasks added for expert panel review."],
+];
 
 const groups = [
   {
@@ -111,7 +130,46 @@ export default function Docs() {
         </div>
       ))}
 
-      <p className="mt-8 text-xs text-gray-400">
+      <div className="mt-10">
+        <div className="flex items-center gap-2.5">
+          <div className="flex h-8 w-8 items-center justify-center rounded-md bg-[var(--navy)]/5 text-[var(--navy)]">
+            <GraduationCap size={17} strokeWidth={2} aria-hidden />
+          </div>
+          <h2 className="text-xl text-[var(--navy)]">Masterclass curriculum &amp; session standards</h2>
+        </div>
+        <p className="mt-2 text-sm text-gray-600">
+          What every session covers, and what a masterclass owner is expected to publish before, during, and after — see{" "}
+          <a href="../masterclasses" className="text-[var(--teal-dark)] underline">Masterclasses</a> for the recorded sessions themselves.
+        </p>
+        <div className="mt-4 grid gap-6 lg:grid-cols-2">
+          <div>
+            <h3 className="font-semibold text-[var(--navy)]">Core topics covered</h3>
+            <ol className="mt-3 space-y-2">
+              {coreTopics.map((t, i) => (
+                <li key={t} className="flex gap-3 text-sm text-gray-700">
+                  <span className="shrink-0 inline-flex h-6 w-6 items-center justify-center rounded-full bg-[var(--teal)] text-white text-xs font-bold">
+                    {i + 1}
+                  </span>
+                  {t}
+                </li>
+              ))}
+            </ol>
+          </div>
+          <div>
+            <h3 className="font-semibold text-[var(--navy)]">Session readiness standards</h3>
+            <div className="mt-3 space-y-3">
+              {readiness.map(([stage, req]) => (
+                <div key={stage} className="rounded-lg bg-white border border-gray-200 p-4">
+                  <h4 className="font-semibold text-[var(--teal-dark)] text-sm">{stage}</h4>
+                  <p className="mt-1 text-sm text-gray-600">{req}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p className="mt-10 text-xs text-gray-400">
         Docs are being published by section owners — links will appear inline as each is ready.
       </p>
     </div>
